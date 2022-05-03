@@ -14,7 +14,16 @@ kotlin {
     iosSimulatorArm64()
 
     sourceSets {
-        val commonMain by getting
+        val commonMain by getting {
+            dependencies {
+                implementation(Dependencies.Coroutines.core) {
+                    version {
+                        // strictly using the native-mt version on coroutines
+                        strictly(Versions.coroutines)
+                    }
+                }
+            }
+        }
         val commonTest by getting {
             dependencies {
                 implementation(kotlin("test"))
