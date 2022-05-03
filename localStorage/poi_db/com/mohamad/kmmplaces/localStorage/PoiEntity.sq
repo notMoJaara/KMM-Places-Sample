@@ -1,0 +1,17 @@
+CREATE TABLE PoiEntity (
+    id INTEGER PRIMARY KEY NOT NULL,
+    name TEXT NOT NULL,
+    location TEXT NOT NULL
+);
+
+clearTable:
+DELETE FROM PoiEntity;
+
+insertOrUpdate:
+INSERT OR REPLACE INTO PoiEntity(id, name, location) VALUES (?, ?, ?);
+
+selectAll:
+SELECT * FROM PoiEntity;
+
+deleteAll:
+DELETE FROM PoiEntity;
