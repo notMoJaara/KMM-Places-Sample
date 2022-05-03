@@ -1,4 +1,5 @@
 import org.gradle.kotlin.dsl.kotlin
+import org.gradle.kotlin.dsl.version
 import org.gradle.plugin.use.PluginDependenciesSpec
 
 object GradlePlugin {
@@ -17,5 +18,8 @@ object GradlePlugin {
 
     fun multiplatform(scope: PluginDependenciesSpec) =
         scope.kotlin("multiplatform")
+
+    fun serialization(scope: PluginDependenciesSpec) =
+        scope.kotlin("plugin.serialization") version Versions.kotlin
 }
 
