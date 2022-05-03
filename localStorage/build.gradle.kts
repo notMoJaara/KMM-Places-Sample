@@ -15,7 +15,7 @@ kotlin {
     sourceSets {
         val commonMain by getting {
             dependencies {
-                implementation(project(":localStorage"))
+                implementation(project(":util"))
 
                 // coroutines
                 implementation(Dependencies.Coroutines.core) {
@@ -45,6 +45,9 @@ kotlin {
         val iosArm64Main by getting
         val iosSimulatorArm64Main by getting
         val iosMain by creating {
+            dependencies {
+                implementation(Dependencies.SqlDelight.nativeDriver)
+            }
             dependsOn(commonMain)
             iosX64Main.dependsOn(this)
             iosArm64Main.dependsOn(this)
@@ -73,8 +76,7 @@ android {
 
 sqldelight {
     database("PoiDatabase") {
-        dialect = Dependencies.SqlDelight.dialect
-        packageName = "com.mohamad.kalium.persistence"
-        sourceFolders = listOf("db_user")
+        packageName = "com.mohamad.kmmplaces.localStorage"
+        sourceFolders = listOf("poi_db")
     }
 }
