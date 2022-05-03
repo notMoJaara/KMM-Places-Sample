@@ -4,6 +4,7 @@ object Versions {
     const val appCompat = "1.1.0"
     const val coroutines = "1.6.0-native-mt"
     const val ktor2 = "2.0.0-beta-1"
+    const val sqlDelight = "2.0.0-alpha01"
 }
 
 
@@ -25,6 +26,16 @@ object Dependencies {
         const val mock = "io.ktor:ktor-client-mock:${Versions.ktor2}"
         const val okHttp = "io.ktor:ktor-client-okhttp:${Versions.ktor2}"
         const val iosHttp = "io.ktor:ktor-client-ios:${Versions.ktor2}"
+    }
+
+    object SqlDelight {
+        const val runtime = "app.cash.sqldelight:runtime:${Versions.sqlDelight}"
+        const val coroutinesExtension = "app.cash.sqldelight:coroutines-extensions:${Versions.sqlDelight}"
+        const val androidDriver = "app.cash.sqldelight:android-driver:${Versions.sqlDelight}"
+        const val nativeDriver = "app.cash.sqldelight:native-driver:${Versions.sqlDelight}"
+        const val primitiveAdapters = "app.cash.sqldelight:primitive-adapters:${Versions.sqlDelight}"
+        const val dialect = "app.cash.sqldelight:sqlite-3-24-dialect:${Versions.sqlDelight}"
+        const val gradlePlugin = "app.cash.sqldelight:gradle-plugin:${Versions.sqlDelight}"
     }
 
 }

@@ -21,5 +21,8 @@ object GradlePlugin {
 
     fun serialization(scope: PluginDependenciesSpec) =
         scope.kotlin("plugin.serialization") version Versions.kotlin
+
+    fun sqlDelight(scope: PluginDependenciesSpec) =
+        scope.id("app.cash.sqldelight")
 }
 

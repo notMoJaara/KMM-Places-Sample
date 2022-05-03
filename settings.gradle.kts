@@ -10,4 +10,5 @@ rootProject.name = "kmm_places"
 include(":androidApp")
 include(":coreLogic")
 include(":network")
+include(":localStorage")
 include(":util")
