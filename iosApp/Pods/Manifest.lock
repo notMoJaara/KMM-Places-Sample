@@ -1,0 +1,16 @@
+PODS:
+  - coreLogic (1.0)
+
+DEPENDENCIES:
+  - coreLogic (from `../coreLogic`)
+
+EXTERNAL SOURCES:
+  coreLogic:
+    :path: "../coreLogic"
+
+SPEC CHECKSUMS:
+  coreLogic: 8fffdbae0165bfad1d79a342029b5badc8b2836e
+
+PODFILE CHECKSUM: 933b61cc29515ace76048330a490dbc2f7acd6be
+
+COCOAPODS: 1.11.2
