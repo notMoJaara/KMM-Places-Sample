@@ -1,5 +1,5 @@
 CREATE TABLE PoiEntity (
-    id INTEGER PRIMARY KEY NOT NULL,
+    id TEXT PRIMARY KEY NOT NULL,
     name TEXT NOT NULL,
     location TEXT NOT NULL,
     distance INTEGER NOT NULL,
