@@ -2,9 +2,13 @@
 object Versions {
     val kotlin = KotlinVersion.CURRENT.toString()
     const val appCompat = "1.1.0"
-    const val coroutines = "1.6.0-native-mt"
+    const val coroutines = "1.6.1-native-mt"
     const val ktor2 = "2.0.0-beta-1"
     const val sqlDelight = "2.0.0-alpha01"
+    const val navigation = "2.4.2"
+    const val compose = "1.2.0-alpha08"
+    const val activityCompose = "1.4.0"
+    const val hilt = "2.39.1"
 }
 
 
@@ -36,6 +40,24 @@ object Dependencies {
         const val primitiveAdapters = "app.cash.sqldelight:primitive-adapters:${Versions.sqlDelight}"
         const val dialect = "app.cash.sqldelight:sqlite-3-24-dialect:${Versions.sqlDelight}"
         const val gradlePlugin = "app.cash.sqldelight:gradle-plugin:${Versions.sqlDelight}"
+    }
+
+    object Navigation {
+        const val ui = "androidx.navigation:navigation-ui-ktx:${Versions.navigation}"
+        const val fragment = "androidx.navigation:navigation-fragment-ktx:${Versions.navigation}"
+        const val gradlePlugin = "androidx.navigation:navigation-safe-args-gradle-plugin:${Versions.navigation}"
+    }
+
+    object Compose {
+        const val activity = "androidx.activity:activity-compose:${Versions.activityCompose}"
+        const val material = "androidx.compose.material:material:${Versions.compose}"
+    }
+
+    object Hilt {
+        // Dagger / Hilt
+        const val android = "com.google.dagger:hilt-android:${Versions.hilt}"
+        const val compiler = "com.google.dagger:hilt-compiler:${Versions.hilt}"
+        const val gradlePlugin = "com.google.dagger:hilt-android-gradle-plugin:${Versions.hilt}"
     }
 
 }

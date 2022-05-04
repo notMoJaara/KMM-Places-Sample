@@ -24,5 +24,18 @@ object GradlePlugin {
 
     fun sqlDelight(scope: PluginDependenciesSpec) =
         scope.id("app.cash.sqldelight")
+
+    fun kapt(scope: PluginDependenciesSpec) =
+        scope.id("kotlin-kapt")
+
+    fun kotlinParcelize(scope: PluginDependenciesSpec) =
+        scope.id("kotlin-parcelize")
+
+    fun hiltPlugin(scope: PluginDependenciesSpec) =
+        scope.id("dagger.hilt.android.plugin")
+
+    fun safeArgs(scope: PluginDependenciesSpec) =
+        scope.id("androidx.navigation.safeargs.kotlin")
+
 }
 
