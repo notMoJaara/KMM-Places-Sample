@@ -1,8 +1,8 @@
 package com.mohamad.kmmplaces.network.foursquare
 
 import com.mohamad.kmmplaces.util.SecureProperties
-import com.mohamad.kmmplaces.network.foursquare.nearby.Nearby
-import com.mohamad.kmmplaces.network.foursquare.nearby.NearbyImpl
+import com.mohamad.kmmplaces.network.foursquare.nearby.NearbyApi
+import com.mohamad.kmmplaces.network.foursquare.nearby.NearbyApiImpl
 import com.mohamad.kmmplaces.network.http_client.HttpClientOptions
 import com.mohamad.kmmplaces.network.http_client.httpEngineProvider
 import com.mohamad.kmmplaces.network.http_client.provideBaseHttpClient
@@ -25,5 +25,5 @@ class FoursquareService(
         provideBaseHttpClient(engine, HttpClientOptions.Foursquare(foursquareApiKeyProvider))
     }
 
-    val nearby: Nearby get() = NearbyImpl(authenticatedHttpClient)
+    val nearbyApi: NearbyApi get() = NearbyApiImpl(authenticatedHttpClient)
 }

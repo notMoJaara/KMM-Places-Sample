@@ -4,11 +4,12 @@ import com.mohamad.kmmplaces.network.foursquare.FoursquareResponse
 import com.mohamad.kmmplaces.network.foursquare.model.PlacesListDTO
 import com.mohamad.kmmplaces.network.foursquare.wrapFoursquareRequest
 import com.mohamad.kmmplaces.util.KmmDispatcher
+import com.mohamad.kmmplaces.util.KmmDispatcherImpl
 import io.ktor.client.*
 import io.ktor.client.request.*
 import kotlinx.coroutines.withContext
 
-interface Nearby {
+interface NearbyApi {
     suspend fun findNearbyPlaces(param: NearbyParam?): FoursquareResponse<PlacesListDTO>
 
     // TODO: investigate about possible param combinations (E.g. can altitude be provided without lat/long)
@@ -29,11 +30,11 @@ data class Location(
 }
 
 
-class NearbyImpl(
+class NearbyApiImpl(
     private val httpClient: HttpClient,
-    private val dispatcher: KmmDispatcher
-) : Nearby {
-    override suspend fun findNearbyPlaces(param: Nearby.NearbyParam?): FoursquareResponse<PlacesListDTO> = wrapFoursquareRequest {
+    private val dispatcher: KmmDispatcher = KmmDispatcherImpl
+) : NearbyApi {
+    override suspend fun findNearbyPlaces(param: NearbyApi.NearbyParam?): FoursquareResponse<PlacesListDTO> = wrapFoursquareRequest {
         withContext(dispatcher.io) {
             // TODO: add proper support for api version
             httpClient.get("v3/$PLACES_PATH/$NEARBY_PATH") {
