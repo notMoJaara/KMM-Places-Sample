@@ -14,7 +14,7 @@ data class ResultDTO(
     @SerialName("chains")
     val chains: List<ChainsDTO>,
     @SerialName("distance")
-    val distance: Int,
+    val distance: Long,
     @SerialName("geocodes")
     val geocodes: GeocodesDTO,
     @SerialName("location")

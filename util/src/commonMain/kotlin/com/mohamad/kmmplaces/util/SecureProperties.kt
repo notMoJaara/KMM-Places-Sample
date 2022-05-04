@@ -4,6 +4,6 @@ expect object SecureProperties {
     val fourSquareKey: String
     val googleMapsKey: String
 
-    val defLatL: String
+    val defLat: String
     val defLong: String
 }

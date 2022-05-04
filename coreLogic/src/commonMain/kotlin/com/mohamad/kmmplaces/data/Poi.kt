@@ -4,13 +4,13 @@ data class Poi(
     val id: String,
     val name: String,
     val location: Location,
-    val distance: Int,
+    val distance: Long,
     val address: Address
 )
 
 data class Location(
-    val lat: Float,
-    val long: Float
+    val lat: Double,
+    val long: Double
 )
 
 data class Address(
