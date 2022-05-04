@@ -26,7 +26,7 @@ kotlin {
                 }
 
                 // ktor
-                implementation(Dependencies.Ktor.core)
+                api(Dependencies.Ktor.core)
                 implementation(Dependencies.Ktor.utils)
                 implementation(Dependencies.Ktor.json)
                 implementation(Dependencies.Ktor.serialization)

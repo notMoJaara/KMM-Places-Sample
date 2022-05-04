@@ -3,6 +3,8 @@ package com.mohamad.kmmplaces.localStorage
 import android.content.Context
 import androidx.sqlite.db.SupportSQLiteDatabase
 import app.cash.sqldelight.driver.android.AndroidSqliteDriver
+import com.mohamad.kmmplaces.localStorage.dao.PoiDAO
+import com.mohamad.kmmplaces.localStorage.dao.PoiDAOImpl
 
 // TODO: register content provider in the android app to easily get app context
 actual class PlacesDBProvider(context: Context) {
@@ -24,8 +26,8 @@ actual class PlacesDBProvider(context: Context) {
         database = PoiDatabase(driver)
     }
 
-    actual val poiEntityQueries: PoiEntityQueries
-        get() = database.poiEntityQueries
+    actual val poiDAO: PoiDAO
+        get() = PoiDAOImpl(database.poiEntityQueries)
 
     private companion object {
         const val DBName = "poi_database"

@@ -1,7 +1,7 @@
 package com.mohamad.kmmplaces.data
 
-import com.mohamad.kmmplaces.CoreError
-import com.mohamad.kmmplaces.NetworkError
+import com.mohamad.kmmplaces.*
+import com.mohamad.kmmplaces.di.MapperProvider
 import com.mohamad.kmmplaces.functional.map
 import com.mohamad.kmmplaces.localStorage.dao.PoiDAO
 import com.mohamad.kmmplaces.network.foursquare.nearby.Location
@@ -25,7 +25,7 @@ interface PoiRepository {
 class PoiRepositoryImpl(
     private val nearbyApi: NearbyApi,
     private val poiDAO: PoiDAO,
-    private val poiMapper: PoiMapper
+    private val poiMapper: PoiMapper = MapperProvider.poiMapper
 ) : PoiRepository {
     override suspend fun observablePoiList(): Either<CoreError, Flow<List<Poi>>> =
         wrapStorageRequest { poiDAO.selectAllFlow().map { it.map((poiMapper::fromEntity)) } }
