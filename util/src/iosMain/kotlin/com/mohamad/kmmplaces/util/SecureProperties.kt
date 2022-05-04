@@ -5,4 +5,8 @@ actual object SecureProperties {
         get() = TODO("Not yet implemented")
     actual val googleMapsKey: String
         get() = TODO("Not yet implemented")
+    actual val defLatL: String
+        get() = TODO("Not yet implemented")
+    actual val defLong: String
+        get() = TODO("Not yet implemented")
 }
