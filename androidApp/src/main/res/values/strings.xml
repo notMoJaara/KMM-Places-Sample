@@ -2,4 +2,5 @@
 <resources>
     <string name="poi_list_fragment_name">Poi list</string>
     <string name="google_maps_fragment_name">Google Maps</string>
+    <string name="share_location_btn_description">share location</string>
 </resources>

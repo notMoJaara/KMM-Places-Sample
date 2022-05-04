@@ -19,7 +19,7 @@ INSERT OR REPLACE INTO PoiEntity(id, name, location, distance, region, postcode,
 VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?);
 
 selectAll:
-SELECT * FROM PoiEntity;
+SELECT * FROM PoiEntity ORDER BY distance ASC;
 
 deleteAll:
 DELETE FROM PoiEntity;
