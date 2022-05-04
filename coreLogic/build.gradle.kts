@@ -26,6 +26,15 @@ kotlin {
         val commonMain by getting {
             dependencies {
                 implementation(project(":util"))
+                implementation(project(":network"))
+                implementation(project(":localStorage"))
+
+                // coroutines
+                implementation(Dependencies.Coroutines.core) {
+                    version {
+                        strictly(Versions.coroutines)
+                    }
+                }
             }
         }
         val commonTest by getting {

@@ -53,6 +53,9 @@ kotlin {
 }
 
 val fourSquareKey: String = gradleLocalProperties(rootDir).getProperty("fourSquareKey")
+val defLat: String = gradleLocalProperties(rootDir).getProperty("defLat")
+val defLong: String = gradleLocalProperties(rootDir).getProperty("defLong")
+
 
 android {
     compileSdk = Android.Sdk.compile
@@ -64,9 +67,14 @@ android {
     buildTypes {
         getByName("debug") {
             buildConfigField("String", "fourSquareKey", fourSquareKey)
+            buildConfigField("String", "defLat", defLat)
+            buildConfigField("String", "defLong", defLong)
+
         }
         getByName("release") {
             buildConfigField("String", "fourSquareKey", fourSquareKey)
+            buildConfigField("String", "defLat", defLat)
+            buildConfigField("String", "defLong", defLong)
         }
     }
 }
