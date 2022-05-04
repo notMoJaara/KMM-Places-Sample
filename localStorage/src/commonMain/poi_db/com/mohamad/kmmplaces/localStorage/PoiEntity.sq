@@ -1,14 +1,22 @@
 CREATE TABLE PoiEntity (
     id INTEGER PRIMARY KEY NOT NULL,
     name TEXT NOT NULL,
-    location TEXT NOT NULL
+    location TEXT NOT NULL,
+    distance INTEGER NOT NULL,
+    region TEXT NOT NULL,
+    postcode TEXT NOT NULL,
+    locality TEXT NOT NULL,
+    country TEXT NOT NULL,
+    address TEXT NOT NULL,
+    formattedAddress TEXT NOT NULL
 );
 
 clearTable:
 DELETE FROM PoiEntity;
 
 insertOrUpdate:
-INSERT OR REPLACE INTO PoiEntity(id, name, location) VALUES (?, ?, ?);
+INSERT OR REPLACE INTO PoiEntity(id, name, location, distance, region, postcode, locality, country, address, formattedAddress)
+VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?);
 
 selectAll:
 SELECT * FROM PoiEntity;
