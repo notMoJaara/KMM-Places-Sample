@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/main_navigation"
+    app:startDestination="@id/poiListFragment">
+
+    <fragment
+        android:id="@+id/poiListFragment"
+        android:name="com.mohamad.kmmplaces.android.ui.poi_list.PoiListFragment"
+        android:label="PoiListFragment" />
+    <fragment
+        android:id="@+id/googleMapsFragment"
+        android:name="com.mohamad.kmmplaces.android.ui.google_maps.GoogleMapsFragment"
+        android:label="GoogleMapsFragment" />
+</navigation>
