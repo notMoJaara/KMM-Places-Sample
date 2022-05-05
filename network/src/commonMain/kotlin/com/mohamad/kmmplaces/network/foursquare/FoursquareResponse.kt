@@ -7,7 +7,6 @@ import io.ktor.client.statement.*
 import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable
 
-typealias FoursquareResponse<T> = Either<FoursquareFailure, T>
 
 @Serializable
 internal data class ErrorResponse(
@@ -23,7 +22,7 @@ sealed class FoursquareFailure {
 }
 
 
-internal suspend inline fun <reified BodyType : Any> wrapFoursquareRequest(performRequest: () -> HttpResponse): FoursquareResponse<BodyType> {
+internal suspend inline fun <reified BodyType : Any> wrapFoursquareRequest(performRequest: () -> HttpResponse): Either<FoursquareFailure, BodyType> {
     return try {
         performRequest().let { result ->
             Either.Right(result.body())

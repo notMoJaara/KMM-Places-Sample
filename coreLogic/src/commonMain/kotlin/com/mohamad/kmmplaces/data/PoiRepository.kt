@@ -43,5 +43,5 @@ class PoiRepositoryImpl(
         NearbyApi.NearbyParam(location = Location(lat, long), limit = limit).let {
             nearbyApi.findNearbyPlaces(it)
         }
-    }.map { it.results.map(poiMapper::fromDTO) }
+    }.map { poiList -> poiList.results.map { poiMapper.fromDTO(it) } }
 }

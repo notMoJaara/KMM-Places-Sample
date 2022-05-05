@@ -9,9 +9,9 @@
 /* Begin PBXAggregateTarget section */
 		5DF6A61A6EE69C80E01B394281644EED /* coreLogic */ = {
 			isa = PBXAggregateTarget;
-			buildConfigurationList = 2A3F9293BB38EEA53FE0FCF9AA515DC4 /* Build configuration list for PBXAggregateTarget "coreLogic" */;
+			buildConfigurationList = C123DF9BE38B599E5C572DBF24CA6DCE /* Build configuration list for PBXAggregateTarget "coreLogic" */;
 			buildPhases = (
-				AD7114A4FD3B608CE4BF8E0BA0A842D8 /* [CP-User] Build coreLogic */,
+				B9535D75A40AA8C3E20E1035FDE9CAEB /* [CP-User] Build coreLogic */,
 			);
 			dependencies = (
 			);
@@ -241,7 +241,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		AD7114A4FD3B608CE4BF8E0BA0A842D8 /* [CP-User] Build coreLogic */ = {
+		B9535D75A40AA8C3E20E1035FDE9CAEB /* [CP-User] Build coreLogic */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -249,7 +249,7 @@
 			name = "[CP-User] Build coreLogic";
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "                if [ \"YES\" = \"$COCOAPODS_SKIP_KOTLIN_BUILD\" ]; then\n                  echo \"Skipping Gradle build task invocation due to COCOAPODS_SKIP_KOTLIN_BUILD environment variable set to \"YES\"\"\n                  exit 0\n                fi\n                set -ev\n                REPO_ROOT=\"$PODS_TARGET_SRCROOT\"\n                \"$REPO_ROOT/../gradlew\" -p \"$REPO_ROOT\" $KOTLIN_PROJECT_PATH:syncFramework                     -Pkotlin.native.cocoapods.platform=$PLATFORM_NAME                     -Pkotlin.native.cocoapods.archs=\"$ARCHS\"                     -Pkotlin.native.cocoapods.configuration=\"$CONFIGURATION\"\n";
+			shellScript = "                if [ \"YES\" = \"$COCOAPODS_SKIP_KOTLIN_BUILD\" ]; then\n                  echo \"Skipping Gradle build task invocation due to COCOAPODS_SKIP_KOTLIN_BUILD environment variable set to \"YES\"\"\n                  exit 0\n                fi\n                set -ev\n                REPO_ROOT=\"$PODS_TARGET_SRCROOT\"\n                \"$REPO_ROOT/../gradlew\" -p \"$REPO_ROOT\" $KOTLIN_PROJECT_PATH:syncFramework                     -Pkotlin.native.cocoapods.platform=$PLATFORM_NAME                     -Pkotlin.native.cocoapods.archs=\"$ARCHS\"                     -Pkotlin.native.cocoapods.configuration=$CONFIGURATION\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -373,24 +373,7 @@
 			};
 			name = Release;
 		};
-		6D8EC7CD8DA0197A3247039E2F969E41 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = CEA0FE78526D3438E8BF0C92C06DFA74 /* coreLogic.debug.xcconfig */;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CLANG_ENABLE_OBJC_WEAK = NO;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
-				SDKROOT = iphoneos;
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Debug;
-		};
-		8DCE35BE7BA4CA68A3E91BA4567E5B41 /* Release */ = {
+		5CCB8035F18BD21428C983107791723B /* Release */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = D131191DAD76ED9E7ACE3B02665E307B /* coreLogic.release.xcconfig */;
 			buildSettings = {
@@ -474,6 +457,23 @@
 			};
 			name = Debug;
 		};
+		BDF91820881377956188BBC888D862F0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = CEA0FE78526D3438E8BF0C92C06DFA74 /* coreLogic.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
 		DA6B2413C3FE7BBF06C93E0A0D7D78C7 /* Release */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 1A2FB55B5C37861BC78ECD1420D818C3 /* Pods-iosApp.release.xcconfig */;
@@ -515,20 +515,20 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		2A3F9293BB38EEA53FE0FCF9AA515DC4 /* Build configuration list for PBXAggregateTarget "coreLogic" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				6D8EC7CD8DA0197A3247039E2F969E41 /* Debug */,
-				8DCE35BE7BA4CA68A3E91BA4567E5B41 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
 		4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				A0374B8CF9A7D6A45F6D116D698D1C19 /* Debug */,
 				593F10BFFA94DAC7D6E17FB8A7F32D72 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C123DF9BE38B599E5C572DBF24CA6DCE /* Build configuration list for PBXAggregateTarget "coreLogic" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BDF91820881377956188BBC888D862F0 /* Debug */,
+				5CCB8035F18BD21428C983107791723B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

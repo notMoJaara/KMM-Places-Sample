@@ -37,5 +37,8 @@ object GradlePlugin {
     fun safeArgs(scope: PluginDependenciesSpec) =
         scope.id("androidx.navigation.safeargs.kotlin")
 
+    fun ksp(scope: PluginDependenciesSpec) =
+        scope.id("com.google.devtools.ksp").version("1.6.10-1.0.2")
+
 }
 

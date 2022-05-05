@@ -26,13 +26,11 @@ sealed class StorageError : CoreError() {
 internal inline fun <T : Any> wrapRemoteRequest(networkCall: () -> Either<FoursquareFailure, T>): Either<NetworkError, T> {
     return try {
         networkCall().fold({
-            Logger.e { it.rootCause.stackTraceToString() }
             Either.Left(NetworkError.Generic(it.rootCause))
         }, {
             Either.Right(it)
         })
     } catch (e: Exception) {
-        Logger.e { e.stackTraceToString() }
         Either.Left(NetworkError.Generic(e))
     }
 }
@@ -42,7 +40,6 @@ internal inline fun <T : Any> wrapStorageRequest(storageRequest: () -> T?): Eith
     return try {
         storageRequest()?.let { Either.Right(it) } ?: Either.Left(StorageError.DataNotFound)
     } catch (e: Exception) {
-        Logger.e { e.stackTraceToString() }
         Either.Left(StorageError.Generic(e))
     }
 }

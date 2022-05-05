@@ -45,6 +45,7 @@ fun GoogleMapsScreen(poiListViewModel: PoiListViewModel) {
         modifier = Modifier.fillMaxSize(),
         cameraPositionState = cameraPositionState
     ) {
+        // TODO: group up markers that are near to each other inorder to avoid screen clutter
         poiListViewModel.poiState.forEach {
             Marker(
                 state = MarkerState(position = it.location.toLatLng()),

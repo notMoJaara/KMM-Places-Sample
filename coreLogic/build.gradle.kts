@@ -2,6 +2,8 @@ plugins {
     GradlePlugin.multiplatform(this)
     GradlePlugin.androidLibrary(this)
     GradlePlugin.nativeCocoapods(this)
+    GradlePlugin.serialization(this)
+    GradlePlugin.ksp(this)
 }
 
 version = "1.0"
@@ -35,6 +37,7 @@ kotlin {
                         strictly(Versions.coroutines)
                     }
                 }
+                implementation(Dependencies.Kotlinx.serialization)
 
                 implementation(kotlin("stdlib-common"))
                 implementation("co.touchlab:kermit:1.1.1")
@@ -43,6 +46,11 @@ kotlin {
         val commonTest by getting {
             dependencies {
                 implementation(kotlin("test"))
+
+                implementation(Dependencies.Coroutines.test)
+
+                // mocking
+                implementation(Dependencies.Test.mockative)
             }
         }
         val androidMain by getting
@@ -75,4 +83,8 @@ android {
         minSdk = Android.Sdk.min
         targetSdk = Android.Sdk.target
     }
+}
+
+dependencies {
+    ksp(Dependencies.Test.mockativeProcessor)
 }

@@ -6,10 +6,12 @@ object Versions {
     const val ktor2 = "2.0.0-beta-1"
     const val sqlDelight = "2.0.0-alpha01"
     const val navigation = "2.4.2"
-    const val compose = "1.2.0-alpha08"
+    const val compose = "1.1.1"
     const val composeConstraintlayout = "1.0.0-beta02"
     const val activityCompose = "1.4.0"
     const val hilt = "2.39.1"
+    const val mockative = "1.1.4"
+    const val ktxSerialization = "1.3.2"
 }
 
 
@@ -60,6 +62,15 @@ object Dependencies {
         const val android = "com.google.dagger:hilt-android:${Versions.hilt}"
         const val compiler = "com.google.dagger:hilt-compiler:${Versions.hilt}"
         const val gradlePlugin = "com.google.dagger:hilt-android-gradle-plugin:${Versions.hilt}"
+    }
+
+    object Test {
+        const val mockative = "io.mockative:mockative:${Versions.mockative}"
+        const val mockativeProcessor = "io.mockative:mockative-processor:${Versions.mockative}"
+    }
+
+    object Kotlinx {
+        const val serialization = "org.jetbrains.kotlinx:kotlinx-serialization-json:${Versions.ktxSerialization}"
     }
 
 }
