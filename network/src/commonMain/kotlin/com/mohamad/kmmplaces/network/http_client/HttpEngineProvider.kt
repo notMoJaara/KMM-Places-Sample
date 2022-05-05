@@ -1,5 +1,5 @@
 package com.mohamad.kmmplaces.network.http_client
 
-import io.ktor.client.engine.HttpClientEngine
+import io.ktor.client.engine.*
 
 expect fun httpEngineProvider(): HttpClientEngine

@@ -1,11 +1,11 @@
 package com.mohamad.kmmplaces.network.foursquare
 
-import com.mohamad.kmmplaces.util.SecureProperties
 import com.mohamad.kmmplaces.network.foursquare.nearby.NearbyApi
 import com.mohamad.kmmplaces.network.foursquare.nearby.NearbyApiImpl
 import com.mohamad.kmmplaces.network.http_client.HttpClientOptions
 import com.mohamad.kmmplaces.network.http_client.httpEngineProvider
 import com.mohamad.kmmplaces.network.http_client.provideBaseHttpClient
+import com.mohamad.kmmplaces.util.SecureProperties
 import io.ktor.client.engine.*
 
 interface FoursquareApiKeyProvider {

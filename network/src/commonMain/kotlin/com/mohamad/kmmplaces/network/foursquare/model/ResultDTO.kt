@@ -1,7 +1,6 @@
 package com.mohamad.kmmplaces.network.foursquare.model
 
 
-import com.mohamad.kmmplaces.network.foursquare.model.*
 import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable
 

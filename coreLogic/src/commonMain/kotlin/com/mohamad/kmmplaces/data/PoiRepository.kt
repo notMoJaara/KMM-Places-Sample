@@ -1,7 +1,7 @@
 package com.mohamad.kmmplaces.data
 
-import com.mohamad.kmmplaces.*
-import com.mohamad.kmmplaces.data.PoiRepository.Companion.MAX_POI_COUNT
+import com.mohamad.kmmplaces.CoreError
+import com.mohamad.kmmplaces.NetworkError
 import com.mohamad.kmmplaces.di.MapperProvider
 import com.mohamad.kmmplaces.functional.map
 import com.mohamad.kmmplaces.localStorage.dao.PoiDAO
