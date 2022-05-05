@@ -6,7 +6,7 @@ object Versions {
     const val ktor2 = "2.0.0-beta-1"
     const val sqlDelight = "2.0.0-alpha01"
     const val navigation = "2.4.2"
-    const val compose = "1.1.1"
+    const val compose = "1.2.0-alpha08"
     const val composeConstraintlayout = "1.0.0-beta02"
     const val activityCompose = "1.4.0"
     const val hilt = "2.39.1"

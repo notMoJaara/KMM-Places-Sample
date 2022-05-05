@@ -9,7 +9,7 @@ EXTERNAL SOURCES:
     :path: "../coreLogic"
 
 SPEC CHECKSUMS:
-  coreLogic: e4620b274a5d497092b0acfa6a6fb932d866f8d6
+  coreLogic: 8fffdbae0165bfad1d79a342029b5badc8b2836e
 
 PODFILE CHECKSUM: 933b61cc29515ace76048330a490dbc2f7acd6be
 
