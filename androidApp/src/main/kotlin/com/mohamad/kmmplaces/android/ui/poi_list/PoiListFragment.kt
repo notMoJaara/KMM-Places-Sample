@@ -9,12 +9,16 @@ import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
+import androidx.compose.foundation.shape.CornerSize
+import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.*
+import androidx.compose.material.MaterialTheme.typography
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Share
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.ComposeView
 import androidx.compose.ui.res.stringResource
@@ -73,36 +77,46 @@ fun PoiListItemPreview() {
 
 @Composable
 fun PoiListItem(poi: Poi, onShareClick: (poi: Poi) -> Unit) {
-    Row(
-        // TODO: handle padding in more scalable way and not magic numbers
+    Card(
         modifier = Modifier
-            .background(Color.LightGray)
-            .fillMaxWidth()
-            .padding(8.dp),
-        verticalAlignment = Alignment.Bottom,
-        horizontalArrangement = Arrangement.spacedBy(6.dp)
+            .padding(horizontal = 8.dp, vertical = 8.dp)
+            .fillMaxWidth(),
+        elevation = 2.dp,
+        backgroundColor = Color.LightGray,
+        shape = RoundedCornerShape(corner = CornerSize(16.dp))
     ) {
-        Column(
-            horizontalAlignment = Alignment.Start,
-            verticalArrangement = Arrangement.spacedBy(6.dp)
-        ) {
-            Text(
-                text = poi.name,
-                color = Color.Black,
-                fontWeight = FontWeight.Bold
-            )
-            Text(
-                text = poi.address.formattedAddress,
-                color = Color.Black,
-                fontWeight = FontWeight.Bold
-            )
-        }
-        Button(onClick = { onShareClick(poi) }) {
-            Icon(
-                imageVector = Icons.Filled.Share,
-                tint = Color.White,
-                contentDescription = stringResource(R.string.share_location_btn_description)
-            )
+        Row {
+            Button(modifier = Modifier
+                .padding(8.dp)
+                .size(48.dp)
+                .clip(RoundedCornerShape(corner = CornerSize(16.dp)))
+                .align(Alignment.CenterVertically),
+                onClick = { onShareClick(poi) }) {
+                Icon(
+                    imageVector = Icons.Filled.Share,
+                    tint = Color.White,
+                    contentDescription = stringResource(R.string.share_location_btn_description)
+                )
+            }
+            Column(
+                modifier = Modifier
+                    .padding(16.dp)
+                    .fillMaxWidth()
+                    .align(Alignment.CenterVertically)
+            ) {
+                Text(
+                    text = poi.name,
+                    color = Color.Black,
+                    fontWeight = FontWeight.Bold,
+                    style = typography.h6
+                )
+                Text(
+                    text = poi.address.formattedAddress,
+                    color = Color.Black,
+                    fontWeight = FontWeight.Normal,
+                    style = typography.caption
+                )
+            }
         }
     }
 

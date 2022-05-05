@@ -34,7 +34,7 @@ class PoiRepositoryImpl(
         wrapStorageRequest { poiDAO.removeAndInsertNewData(result.map(poiMapper::toEntity)) }
 
     override suspend fun fetchFromRemote(lat: String, long: String): Either<NetworkError, List<Poi>> = wrapRemoteRequest {
-        NearbyApi.NearbyParam(location = Location(lat, long)).let {
+        NearbyApi.NearbyParam(location = Location(lat, long), limit = 50).let {
             nearbyApi.findNearbyPlaces(it)
         }
     }.map { it.results.map(poiMapper::fromDTO) }

@@ -20,7 +20,6 @@ sealed class FoursquareFailure {
     data class RequestError(override val rootCause: Exception, val message: String) : FoursquareFailure()
     data class Server(override val rootCause: Exception) : FoursquareFailure()
     data class Generic(override val rootCause: Exception) : FoursquareFailure()
-
 }
 
 
