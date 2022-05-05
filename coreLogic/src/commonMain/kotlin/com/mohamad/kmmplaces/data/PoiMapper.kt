@@ -33,7 +33,6 @@ class PoiMapper(
             locality = address.locality,
             region = address.region
         )
-
     }
 
 

@@ -7,7 +7,7 @@ import kotlinx.serialization.Serializable
 @Serializable
 data class LocationDTO(
     @SerialName("address")
-    val address: String,
+    val address: String?,
     @SerialName("address_extended")
     val addressExtended: String?,
     @SerialName("census_block")

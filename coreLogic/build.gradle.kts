@@ -35,6 +35,9 @@ kotlin {
                         strictly(Versions.coroutines)
                     }
                 }
+
+                implementation(kotlin("stdlib-common"))
+                implementation("co.touchlab:kermit:1.1.1")
             }
         }
         val commonTest by getting {

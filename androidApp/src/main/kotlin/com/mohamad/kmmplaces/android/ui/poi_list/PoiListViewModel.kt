@@ -33,7 +33,7 @@ class PoiListViewModel @Inject constructor(
         launchOnMain {
             updatePoiFromRemoteUseCase(centerSearchLocation).onFailure {
                 // TODO: better error handling (E.g. based on error type)
-                updateErrorMessage(it.toString())
+                updateErrorMessage("something went wrong")
             }
         }
     }

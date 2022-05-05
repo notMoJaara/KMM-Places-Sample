@@ -7,7 +7,7 @@ CREATE TABLE PoiEntity (
     postcode TEXT NOT NULL,
     locality TEXT NOT NULL,
     country TEXT NOT NULL,
-    address TEXT NOT NULL,
+    address TEXT,
     formattedAddress TEXT NOT NULL
 );
 
