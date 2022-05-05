@@ -7,6 +7,7 @@ object Versions {
     const val sqlDelight = "2.0.0-alpha01"
     const val navigation = "2.4.2"
     const val compose = "1.2.0-alpha08"
+    const val composeConstraintlayout = "1.0.0-beta02"
     const val activityCompose = "1.4.0"
     const val hilt = "2.39.1"
 }
@@ -51,6 +52,7 @@ object Dependencies {
     object Compose {
         const val activity = "androidx.activity:activity-compose:${Versions.activityCompose}"
         const val material = "androidx.compose.material:material:${Versions.compose}"
+        const val constraintLayout = "androidx.constraintlayout:constraintlayout-compose:${Versions.composeConstraintlayout}"
     }
 
     object Hilt {

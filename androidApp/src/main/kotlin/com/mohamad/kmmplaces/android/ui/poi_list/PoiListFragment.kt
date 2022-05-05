@@ -76,8 +76,6 @@ fun PoiListItemPreview() {
 
 @Composable
 fun PoiListItem(poi: Poi, onShareClick: (poi: Poi) -> Unit) {
-    val context = LocalContext.current
-
     Row(
         // TODO: handle padding in more scalable way and not magic numbers
         modifier = Modifier
