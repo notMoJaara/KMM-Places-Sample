@@ -45,11 +45,6 @@ fun GoogleMapsScreen(poiListViewModel: PoiListViewModel) {
         modifier = Modifier.fillMaxSize(),
         cameraPositionState = cameraPositionState
     ) {
-        Marker(
-            state = MarkerState(position = poiListViewModel.centerSearchLocation.toLatLng()),
-            title = "Base Location"
-        )
-
         poiListViewModel.poiState.forEach {
             Marker(
                 state = MarkerState(position = it.location.toLatLng()),
