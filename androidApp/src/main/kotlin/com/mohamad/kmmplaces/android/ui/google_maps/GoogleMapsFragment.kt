@@ -1,6 +1,5 @@
 package com.mohamad.kmmplaces.android.ui.google_maps
 
-import android.annotation.SuppressLint
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -34,7 +33,6 @@ class GoogleMapsFragment : BaseFragment<PoiListViewModel>(
 }
 
 
-@SuppressLint("UnusedMaterialScaffoldPaddingParameter")
 @Composable
 fun GoogleMapsScreen(poiListViewModel: PoiListViewModel) {
 
