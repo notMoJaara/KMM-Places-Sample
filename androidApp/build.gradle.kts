@@ -64,6 +64,7 @@ dependencies {
     implementation(Dependencies.Coroutines.android)
 
     // google maps
+    implementation  ("com.google.maps.android:maps-compose:2.1.0")
     implementation("com.google.android.gms:play-services-maps:18.0.2")
 
 }
