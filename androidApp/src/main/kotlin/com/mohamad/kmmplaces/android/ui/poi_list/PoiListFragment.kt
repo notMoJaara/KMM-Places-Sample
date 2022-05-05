@@ -1,6 +1,7 @@
 package com.mohamad.kmmplaces.android.ui.poi_list
 
 import android.annotation.SuppressLint
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -32,6 +33,7 @@ import com.mohamad.kmmplaces.android.base.BaseFragment
 import com.mohamad.kmmplaces.data.Address
 import com.mohamad.kmmplaces.data.Location
 import com.mohamad.kmmplaces.data.Poi
+import com.mohamad.kmmplaces.data.getShareLink
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -42,7 +44,15 @@ class PoiListFragment : BaseFragment<PoiListViewModel>(
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
         return ComposeView(requireContext()).apply {
-            setContent { PoiListScreen(poiListViewModel = viewModel) }
+            setContent {
+                PoiListScreen(poiListViewModel = viewModel) {
+                    val shareIntent = Intent()
+                    shareIntent.action = Intent.ACTION_SEND
+                    shareIntent.type = "text/plain"
+                    shareIntent.putExtra(Intent.EXTRA_TEXT, context.getString(R.string.share_poi, it.getShareLink()));
+                    startActivity(Intent.createChooser(shareIntent, "sharing this cool place"))
+                }
+            }
         }
     }
 }
@@ -50,13 +60,13 @@ class PoiListFragment : BaseFragment<PoiListViewModel>(
 
 @SuppressLint("UnusedMaterialScaffoldPaddingParameter")
 @Composable
-fun PoiListScreen(poiListViewModel: PoiListViewModel) {
+fun PoiListScreen(poiListViewModel: PoiListViewModel, onItemClick: (Poi) -> Unit) {
     val state = poiListViewModel.poiState
     LazyColumn {
         items(
             state
         ) { poi ->
-            PoiListItem(poi) {}
+            PoiListItem(poi) { onItemClick(poi) }
         }
     }
 

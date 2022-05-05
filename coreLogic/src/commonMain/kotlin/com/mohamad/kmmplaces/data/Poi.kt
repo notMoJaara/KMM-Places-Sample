@@ -8,6 +8,9 @@ data class Poi(
     val address: Address
 )
 
+fun Poi.getShareLink() = "${POI_SHARE_PREFIX}$id"
+private const val POI_SHARE_PREFIX = "https://foursquare.com/v/"
+
 data class Location(
     val lat: Double,
     val long: Double
