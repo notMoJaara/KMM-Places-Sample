@@ -1,6 +1,5 @@
 package com.mohamad.kmmplaces
 
-import co.touchlab.kermit.Logger
 import com.mohamad.kmmplaces.functional.fold
 import com.mohamad.kmmplaces.network.foursquare.FoursquareFailure
 import com.mohamad.kmmplaces.util.Either

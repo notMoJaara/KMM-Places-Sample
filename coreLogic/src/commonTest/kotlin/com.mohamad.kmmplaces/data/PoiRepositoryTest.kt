@@ -1,11 +1,9 @@
 package com.mohamad.kmmplaces.data
 
 import com.mohamad.kmmplaces.NetworkError
-import com.mohamad.kmmplaces.di.MapperProvider
 import com.mohamad.kmmplaces.localStorage.dao.PoiDAO
 import com.mohamad.kmmplaces.network.foursquare.FoursquareFailure
 import com.mohamad.kmmplaces.network.foursquare.model.PlacesListDTO
-import com.mohamad.kmmplaces.network.foursquare.model.ResultDTO
 import com.mohamad.kmmplaces.network.foursquare.nearby.Location
 import com.mohamad.kmmplaces.network.foursquare.nearby.NearbyApi
 import com.mohamad.kmmplaces.util.Either

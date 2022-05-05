@@ -4,9 +4,8 @@ package com.mohamad.kmmplaces.android.util
 
 
 import com.mohamad.kmmplaces.util.Either
-import com.mohamad.kmmplaces.util.Either.Right
 import com.mohamad.kmmplaces.util.Either.Left
-
+import com.mohamad.kmmplaces.util.Either.Right
 import kotlin.contracts.ExperimentalContracts
 import kotlin.contracts.contract
 
